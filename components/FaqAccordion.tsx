@@ -37,7 +37,7 @@ export default function FaqAccordion() {
             <p className="text-[#444] text-xs uppercase tracking-widest mb-5">FAQ</p>
             <h2 className="text-3xl font-bold text-white mb-4">Common questions.</h2>
             <p className="text-[#555] text-sm leading-relaxed max-w-sm">
-              Everything you need to know about ordering, delivery, and installation. Can't find your answer?{' '}
+              Everything you need to know about ordering, delivery, and installation. Can&apos;t find your answer?{' '}
               <a href="tel:+18005556789" className="text-[#52b788] hover:text-[#7fd4a8] transition-colors">
                 Call us directly.
               </a>

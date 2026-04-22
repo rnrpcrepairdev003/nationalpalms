@@ -138,7 +138,7 @@ export default function ServicesPage() {
               <p className="text-[#444] text-xs uppercase tracking-widest mb-6">How It Works</p>
               <h2 className="text-4xl font-bold text-white mb-4">Simple process,<br />exceptional results.</h2>
               <p className="text-[#555] text-sm leading-relaxed max-w-sm">
-                We've refined our process over 15 years to make it as smooth as possible — from your first call to the last stake in the ground.
+                We&apos;ve refined our process over 15 years to make it as smooth as possible — from your first call to the last stake in the ground.
               </p>
             </div>
 
