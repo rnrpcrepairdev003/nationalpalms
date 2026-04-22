@@ -29,7 +29,7 @@ const palmTypes = [
 ]
 
 
-const inputClass = 'w-full bg-[#080808] border border-[#2a2a2a] text-white placeholder-[#444] rounded-md px-4 py-3 text-sm focus:outline-none focus:border-[#3a7d44] transition-colors'
+const inputClass = 'w-full bg-white border border-[#e0e0e0] text-black placeholder-[#aaa] rounded-md px-4 py-3 text-sm focus:outline-none focus:border-[#3a7d44] transition-colors'
 const labelClass = 'block text-xs text-[#777] mb-2 uppercase tracking-wider'
 
 export default function ContactPage() {
@@ -83,7 +83,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className={labelClass}>Service Needed</label>
-                  <select className={inputClass + ' appearance-none text-[#888]'}>
+                  <select className={inputClass + ' appearance-none text-black'}>
                     <option value="">Select a service…</option>
                     {services.map((s) => <option key={s}>{s}</option>)}
                   </select>
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
                 <div>
                   <label className={labelClass}>Palm Species (if known)</label>
-                  <select className={inputClass + ' appearance-none text-[#888]'}>
+                  <select className={inputClass + ' appearance-none text-black'}>
                     <option value="">Select species…</option>
                     {palmTypes.map((p) => <option key={p}>{p}</option>)}
                   </select>
