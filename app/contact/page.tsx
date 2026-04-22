@@ -29,8 +29,8 @@ const palmTypes = [
 ]
 
 
-const inputClass = 'w-full bg-[#0c0c0c] border border-[#1c1c1c] text-white placeholder-[#3a3a3a] rounded-md px-4 py-3 text-sm focus:outline-none focus:border-[#3a7d44] transition-colors'
-const labelClass = 'block text-xs text-[#444] mb-2 uppercase tracking-wider'
+const inputClass = 'w-full bg-[#080808] border border-[#2a2a2a] text-white placeholder-[#444] rounded-md px-4 py-3 text-sm focus:outline-none focus:border-[#3a7d44] transition-colors'
+const labelClass = 'block text-xs text-[#777] mb-2 uppercase tracking-wider'
 
 export default function ContactPage() {
   return (
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <form className="space-y-5">
+              <form className="space-y-5 bg-[#111] border border-[#222] rounded-2xl p-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className={labelClass}>First Name</label>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                 <button type="submit" className="btn-green w-full py-4">
                   Submit Quote Request
                 </button>
-                <p className="text-[#333] text-xs text-center">We respond within 24 hours · No spam, ever</p>
+                <p className="text-[#555] text-xs text-center">We respond within 24 hours · No spam, ever</p>
               </form>
             </div>
 
