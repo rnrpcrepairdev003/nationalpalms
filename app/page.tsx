@@ -7,190 +7,205 @@ export const metadata: Metadata = {
   description: 'Shop premium palm trees with nationwide delivery and professional crane installation. Queen, King, Bismarck, Date palms and more.',
 }
 
-const featured = [
-  {
-    name: 'Queen Palm',
-    latin: 'Syagrus romanzoffiana',
-    price: 'From $150',
-    tag: 'Best Seller',
-    img: '/IMG_2102.webp',
-  },
-  {
-    name: 'Canary Island Date Palm',
-    latin: 'Phoenix canariensis',
-    price: 'From $400',
-    tag: 'Premium',
-    img: '/IMG_7408.webp',
-  },
-  {
-    name: 'Bismarck Palm',
-    latin: 'Bismarckia nobilis',
-    price: 'From $500',
-    tag: 'Rare Find',
-    img: '/IMG_6710.webp',
-  },
+const palms = [
+  { name: 'Queen Palm', price: 'From $150', tag: 'Best Seller', img: '/IMG_2102.webp' },
+  { name: 'Canary Island Date Palm', price: 'From $400', tag: 'Premium', img: '/IMG_7408.webp' },
+  { name: 'Bismarck Palm', price: 'From $500', tag: 'Rare Find', img: '/IMG_6710.webp' },
+  { name: 'Date Palm', price: 'From $250', tag: null, img: '/DJI_0267.webp' },
 ]
 
-const services = [
-  {
-    title: 'Nationwide Delivery',
-    body: 'Climate-controlled transport to all 48 contiguous states. Root-safe handling, on-site unloading included.',
-  },
-  {
-    title: 'Crane Installation',
-    body: 'Certified crane operators for palms up to 60 ft. Residential, commercial, and tight-access sites.',
-  },
+const stats = [
+  { value: '48', label: 'States Served' },
+  { value: '5,000+', label: 'Trees Delivered' },
+  { value: '15+', label: 'Years Experience' },
+  { value: '100%', label: 'Satisfaction Guarantee' },
 ]
 
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO ─── */}
-      <section className="pt-14 min-h-[88vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center py-20">
+      {/* ── HERO ── */}
+      <section className="pt-14 relative min-h-[70vh] flex flex-col items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/IMG_2146.webp"
+            alt="Palm trees illuminated at night"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#080808]/75" />
+        </div>
 
-          <div>
-            <p className="text-[#52b788] text-xs tracking-[0.2em] uppercase mb-7">
-              Delivery · Crane Installation
-            </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] font-bold text-white tracking-tight leading-none mb-7">
-              Premium<br />Palm Trees.
-            </h1>
-            <p className="text-[#666] text-base leading-relaxed mb-10 max-w-sm">
-              Hand-selected specimen palms shipped anywhere in the US, with professional crane installation available nationwide.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/shop" className="btn-green px-7 py-3.5">
-                Shop Palms
-              </Link>
-              <Link href="/contact" className="btn-outline px-7 py-3.5">
-                Request a Quote
-              </Link>
-            </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 flex flex-col items-center">
+          {/* Logo placeholder */}
+          <div className="mb-8 w-24 h-24 rounded-full border border-[#2e2e2e] bg-[#0d0d0d]/80 flex items-center justify-center">
+            <span className="text-[#52b788] text-xs font-semibold tracking-widest uppercase text-center leading-tight px-2">
+              Your<br />Logo
+            </span>
           </div>
 
-          <div className="relative h-[300px] sm:h-[380px] lg:h-[460px] overflow-hidden rounded-xl">
-            <Image
-              src="/DJI_0280.webp"
-              alt="Canary Island Date Palms installed at luxury home"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/40 to-transparent" />
+          <p className="text-[#52b788] text-xs tracking-[0.25em] uppercase mb-5">
+            Delivering Nationwide · All 48 States
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-none tracking-tight mb-6">
+            Premium Palm Trees<br />
+            <span className="text-[#52b788]">Delivered to Your Door.</span>
+          </h1>
+          <p className="text-[#999] text-base leading-relaxed mb-10 max-w-lg">
+            Hand-selected specimen palms shipped anywhere in the United States — with professional crane installation available at your site.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/shop" className="btn-green px-8 py-4 text-sm">
+              Shop Palm Trees
+            </Link>
+            <Link href="/contact" className="btn-outline px-8 py-4 text-sm">
+              Get a Free Quote
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES STRIP ─── */}
-      <section className="border-y border-[#1c1c1c]">
+      {/* ── STATS ── */}
+      <section className="border-b border-[#1c1c1c]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#1c1c1c]">
-            {services.map((s) => (
-              <div key={s.title} className="px-8 py-8">
-                <p className="text-white text-sm font-medium mb-2">{s.title}</p>
-                <p className="text-[#555] text-sm leading-relaxed">{s.body}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#1c1c1c]">
+            {stats.map((s) => (
+              <div key={s.label} className="py-8 px-6 text-center">
+                <p className="text-3xl font-bold text-white">{s.value}</p>
+                <p className="text-[#444] text-xs mt-1.5 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED PALMS ─── */}
-      <section className="py-20">
+      {/* ── SERVICES ── */}
+      <section className="py-20 border-b border-[#1c1c1c]">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-[#444] text-xs uppercase tracking-widest mb-3">What We Do</p>
+          <h2 className="text-3xl font-bold text-white mb-10">Services</h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+            {/* Delivery */}
+            <Link href="/services" className="group relative overflow-hidden rounded-xl aspect-[16/9]">
+              <Image
+                src="/IMG_0373.webp"
+                alt="Nationwide palm tree delivery"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-[#52b788] text-xs uppercase tracking-widest mb-2">Service 01</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Nationwide Delivery</h3>
+                <p className="text-[#888] text-sm leading-relaxed max-w-sm">
+                  Climate-controlled transport to all 48 contiguous states. Every tree is root-protected and unloaded on-site.
+                </p>
+                <span className="inline-block mt-4 text-[#52b788] text-sm">Learn more →</span>
+              </div>
+            </Link>
+
+            {/* Crane Installation */}
+            <Link href="/services" className="group relative overflow-hidden rounded-xl aspect-[16/9]">
+              <Image
+                src="/IMG_0830.webp"
+                alt="Professional crane installation"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-[#52b788] text-xs uppercase tracking-widest mb-2">Service 02</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Crane Installation</h3>
+                <p className="text-[#888] text-sm leading-relaxed max-w-sm">
+                  Certified crane operators for palms up to 60 ft. Residential, commercial, pools, slopes — we handle it all.
+                </p>
+                <span className="inline-block mt-4 text-[#52b788] text-sm">Learn more →</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NATIONWIDE BANNER ── */}
+      <section className="py-16 border-b border-[#1c1c1c] bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div>
+            <p className="text-[#52b788] text-xs uppercase tracking-widest mb-3">Nationwide Coverage</p>
+            <h2 className="text-3xl font-bold text-white">We deliver to all 48 contiguous states.</h2>
+            <p className="text-[#555] text-sm mt-3 max-w-lg leading-relaxed">
+              From California to Florida, Texas to New York — our fleet delivers premium specimen palms directly to your property, anywhere in the continental US.
+            </p>
+          </div>
+          <Link href="/contact" className="btn-green shrink-0 px-8 py-4">
+            Get a Delivery Quote
+          </Link>
+        </div>
+      </section>
+
+      {/* ── SHOP / PALMS ── */}
+      <section className="py-20 border-b border-[#1c1c1c]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-baseline justify-between mb-10">
-            <h2 className="text-xl font-semibold text-white">Featured Palms</h2>
-            <Link href="/shop" className="text-[#52b788] text-sm hover:text-[#7fd4a8] transition-colors">
+            <div>
+              <p className="text-[#444] text-xs uppercase tracking-widest mb-3">Our Collection</p>
+              <h2 className="text-3xl font-bold text-white">Shop Palm Trees</h2>
+            </div>
+            <Link href="/shop" className="text-[#52b788] text-sm hover:text-[#7fd4a8] transition-colors shrink-0">
               View all →
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {featured.map((palm) => (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+            {palms.map((palm) => (
               <Link
                 key={palm.name}
                 href="/shop"
                 className="group bg-[#0d0d0d] border border-[#1c1c1c] rounded-xl overflow-hidden hover:border-[#2e2e2e] transition-colors"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={palm.img}
                     alt={palm.name}
                     fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                  {palm.tag && (
+                    <span className="absolute top-3 left-3 bg-[#080808]/80 backdrop-blur-sm text-white text-[10px] font-medium px-2 py-1 rounded-md tracking-wide">
+                      {palm.tag}
+                    </span>
+                  )}
                 </div>
-                <div className="p-5 flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-white text-sm font-medium">{palm.name}</p>
-                    <p className="text-[#444] text-xs italic mt-0.5">{palm.latin}</p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <p className="text-[#52b788] text-sm font-medium">{palm.price}</p>
-                    <p className="text-[#3a3a3a] text-xs mt-0.5">{palm.tag}</p>
-                  </div>
+                <div className="p-3">
+                  <p className="text-white text-xs font-medium leading-snug">{palm.name}</p>
+                  <p className="text-[#52b788] text-xs mt-1.5 font-medium">{palm.price}</p>
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── DELIVERY + CRANE CALLOUT ─── */}
-      <section className="border-t border-[#1c1c1c]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#1c1c1c]">
-
-            <div className="bg-[#080808] py-16 px-10 flex flex-col justify-between gap-10">
-              <div>
-                <p className="text-[#3a3a3a] text-xs uppercase tracking-widest mb-5">Delivery</p>
-                <h3 className="text-3xl font-bold text-white mb-4">We ship to all<br />48 states.</h3>
-                <p className="text-[#555] text-sm leading-relaxed max-w-sm">
-                  Every tree is secured, root-protected, and transported in climate-controlled vehicles. We unload on-site and position the tree exactly where you want it.
-                </p>
-              </div>
-              <Link href="/services" className="btn-outline self-start px-6 py-3">
-                Learn about delivery →
-              </Link>
-            </div>
-
-            <div className="relative bg-[#080808] py-16 px-10 flex flex-col justify-between gap-10 overflow-hidden">
-              <div className="absolute inset-0">
-                <Image
-                  src="/IMG_0830.webp"
-                  alt="Crane installing a large palm tree"
-                  fill
-                  sizes="50vw"
-                  className="object-cover opacity-15"
-                />
-              </div>
-              <div className="relative">
-                <p className="text-[#3a3a3a] text-xs uppercase tracking-widest mb-5">Crane Installation</p>
-                <h3 className="text-3xl font-bold text-white mb-4">Large trees,<br />no problem.</h3>
-                <p className="text-[#555] text-sm leading-relaxed max-w-sm">
-                  Our certified crane operators handle palms up to 60 ft tall. Pools, slopes, rooftops — we place them precisely, every time.
-                </p>
-              </div>
-              <Link href="/services" className="btn-outline relative self-start px-6 py-3">
-                Learn about installation →
-              </Link>
-            </div>
+          <div className="mt-6 text-center">
+            <Link href="/shop" className="btn-outline px-8 py-3">
+              Browse All Species
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── CTA ─── */}
-      <section className="py-24 border-t border-[#1c1c1c]">
+      {/* ── CTA ── */}
+      <section className="py-24">
         <div className="max-w-lg mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to transform your landscape?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to get started?</h2>
           <p className="text-[#555] text-sm mb-8 leading-relaxed">
-            Get a free quote on palms, delivery, and crane installation. We respond within 24 hours.
+            Tell us your species, quantity, and zip code. We respond within 24 hours with a full price breakdown — delivery included.
           </p>
-          <Link href="/contact" className="btn-green px-9 py-3.5">
+          <Link href="/contact" className="btn-green px-9 py-4">
             Request a Free Quote
           </Link>
         </div>
