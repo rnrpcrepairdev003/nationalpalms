@@ -125,7 +125,7 @@ export default function ContactPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-1 gap-10">
 
               <div>
                 <p className="text-[#444] text-xs uppercase tracking-widest mb-5">Contact Directly</p>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              <div className="border-t border-[#1c1c1c] pt-10">
+              <div>
                 <p className="text-[#444] text-xs uppercase tracking-widest mb-5">Why Choose Us</p>
                 <ul className="space-y-2.5">
                   {[
