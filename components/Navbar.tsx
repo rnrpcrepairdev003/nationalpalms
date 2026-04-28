@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
@@ -28,8 +29,15 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center">
 
           {/* Logo — desktop */}
-          <Link href="/" className="text-white text-sm font-semibold tracking-tight shrink-0">
-            National Palm Trees
+          <Link href="/" className="shrink-0 flex items-center gap-2.5">
+            <Image
+              src="/logo.webp"
+              alt="National Palms logo"
+              width={36}
+              height={36}
+              className="invert"
+            />
+            <span className="text-white text-sm font-semibold tracking-tight">National Palms</span>
           </Link>
 
           {/* Center nav — desktop */}
@@ -84,7 +92,10 @@ export default function Navbar() {
 
           {/* Drawer header */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-[#1c1c1c] shrink-0">
-            <span className="text-white text-sm font-semibold">National Palm Trees</span>
+            <div className="flex items-center gap-2.5">
+              <Image src="/logo.webp" alt="National Palms logo" width={28} height={28} className="invert" />
+              <span className="text-white text-sm font-semibold">National Palms</span>
+            </div>
             <button
               onClick={() => setOpen(false)}
               className="text-[#666] hover:text-white transition-colors p-1"
