@@ -39,11 +39,15 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 flex flex-col items-center">
-          {/* Logo placeholder */}
-          <div className="mb-8 w-24 h-24 rounded-full border border-[#2e2e2e] bg-[#0d0d0d]/80 flex items-center justify-center">
-            <span className="text-[#52b788] text-xs font-semibold tracking-widest uppercase text-center leading-tight px-2">
-              Your<br />Logo
-            </span>
+          {/* Logo */}
+          <div className="mb-8">
+            <Image
+              src="/logo.webp"
+              alt="National Palms"
+              width={100}
+              height={100}
+              className="invert"
+            />
           </div>
 
           <p className="text-[#52b788] text-xs tracking-[0.25em] uppercase mb-5">
